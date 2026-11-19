@@ -129,24 +129,36 @@ nav.main>a.head-cta:hover{background:var(--orange-dark);color:#fff}
 .form-done.show{display:block}
 .form-done svg{width:52px;height:52px;color:var(--orange);margin:0 auto 1rem}
 
-/* ---------- services: expanding panels ---------- */
+/* ---------- services: photo stage + index ---------- */
 .services{padding:clamp(4rem,8vw,7rem) 0 clamp(4rem,7vw,6rem);background:var(--paper)}
 .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:2.6rem}
 .sec-head p{color:var(--muted);max-width:48ch;justify-self:end}
-.panels{display:flex;gap:10px;height:440px}
-.panel{position:relative;flex:1;min-width:0;border-radius:18px;overflow:hidden;cursor:pointer;transition:flex .55s cubic-bezier(.6,.05,.2,1);background:var(--indigo-deep);border:0;padding:0;text-align:left;color:#fff;font:inherit}
-.panel.active{flex:5.2}
-.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-.panel.active img{transform:scale(1.03)}
-.panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,8,56,.05) 30%,rgba(20,8,56,.88) 100%)}
-.panel .v-label{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%) rotate(180deg);writing-mode:vertical-rl;font-weight:600;font-size:1.05rem;white-space:nowrap;transition:opacity .25s}
-.panel.active .v-label{opacity:0}
-.panel .p-body{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:clamp(1.3rem,2.5vw,2.2rem);opacity:0;transform:translateY(12px);transition:opacity .35s .2s,transform .35s .2s;pointer-events:none}
-.panel.active .p-body{opacity:1;transform:none;pointer-events:auto}
-.p-body h3{font-size:clamp(1.6rem,2.6vw,2.3rem);margin-bottom:.5rem}
-.p-body p{max-width:44ch;color:#E3DDFA;margin-bottom:1.1rem}
-.p-body a{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:#fff;text-decoration:none;background:rgba(255,255,255,.14);padding:.65rem 1.1rem;border-radius:999px;backdrop-filter:blur(6px)}
-.p-body a:hover{background:var(--orange);color:#1A0E00}
+.svc{display:grid;grid-template-columns:1.45fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);align-items:stretch}
+.svc-stage{position:relative;border-radius:26px;overflow:hidden;background:var(--indigo-deep);min-height:560px}
+.svc-slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility 0s .5s}
+.svc-slide.on{opacity:1;visibility:visible;transition:opacity .5s ease}
+.svc-slide img{width:100%;height:100%;object-fit:cover}
+.svc-slide figcaption{position:absolute;left:0;bottom:0;max-width:min(420px,80%);background:var(--paper);color:var(--ink);border-radius:0 22px 0 0;padding:1.3rem 1.5rem 1.4rem}
+.svc-slide figcaption h3{font-size:clamp(1.5rem,2.3vw,2rem);color:var(--indigo-deep);margin-bottom:.45rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .svc-slide figcaption h3{color:#fff}}
+:root[data-theme="dark"] .svc-slide figcaption h3{color:#fff}
+.svc-slide figcaption p{color:var(--muted);margin-bottom:1rem}
+.svc-slide figcaption a{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:var(--indigo);text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:2px}
+.svc-slide figcaption a:hover{color:var(--orange-dark)}
+.svc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.svc-list li{border-bottom:1px solid var(--line);flex:1;display:flex}
+.svc-tab{flex:1;display:flex;align-items:center;gap:1rem;width:100%;background:none;border:0;padding:.75rem .6rem .75rem 0;font:600 clamp(1.08rem,1.5vw,1.3rem)/1.2 var(--sans);color:var(--muted);text-align:left;cursor:pointer;position:relative;transition:color .2s,padding .3s}
+.svc-tab img{width:58px;height:58px;border-radius:12px 12px 12px 3px;object-fit:cover;flex:none;filter:grayscale(1) contrast(.9);opacity:.55;transition:filter .3s,opacity .3s}
+.svc-tab::after{content:"";position:absolute;right:.4rem;top:50%;width:10px;height:10px;border-radius:50%;background:var(--orange);transform:translateY(-50%) scale(0);transition:transform .25s}
+.svc-tab:hover{color:var(--ink)}
+.svc-tab:hover img{opacity:.85}
+.svc-tab[aria-selected="true"]{color:var(--indigo-deep);padding-left:.6rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .svc-tab[aria-selected="true"]{color:#fff}}
+:root[data-theme="dark"] .svc-tab[aria-selected="true"]{color:#fff}
+.svc-tab[aria-selected="true"] img{filter:none;opacity:1}
+.svc-tab[aria-selected="true"]::after{transform:translateY(-50%) scale(1)}
+.svc-foot{margin-top:1.4rem;color:var(--muted);font-size:.98rem}
+.svc-foot a{color:var(--indigo);font-weight:600}
 
 /* ---------- about ---------- */
 .about{background:var(--mist);padding:clamp(4rem,8vw,7rem) 0;position:relative;overflow:hidden}
@@ -282,13 +294,17 @@ footer .socials{margin-top:1.1rem}
   .sec-head,.about-grid,.commit-grid,.rev-grid,.faq-grid,.cta-box{grid-template-columns:1fr}
   .sec-head p{justify-self:start}
   .commit-intro{position:static}
-  .panels{flex-direction:column;height:auto;gap:10px}
-  .panel,.panel.active{flex:none;height:240px}
-  .panel .v-label{display:none}
-  .panel .p-body{opacity:1;transform:none;pointer-events:auto}
-    .p-body p{display:none}
-  .panel.active .p-body p{display:block}
-  .panel.active{height:340px}
+  .svc{grid-template-columns:1fr}
+  .svc-stage{min-height:0;aspect-ratio:4/3.4}
+  .svc-slide figcaption{max-width:100%;right:0;border-radius:18px 18px 0 0;padding:1.1rem 1.2rem 1.2rem}
+  .svc-slide figcaption p{display:none}
+  .svc-list{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:.5rem;border:0;padding-bottom:.4rem;margin:0 calc(-1 * clamp(1.1rem,4vw,2.5rem));padding-left:clamp(1.1rem,4vw,2.5rem);padding-right:clamp(1.1rem,4vw,2.5rem)}
+  .svc-list{order:-1}
+  .svc-list li{border:0;flex:none;scroll-snap-align:start}
+  .svc-tab{border:1px solid var(--line);border-radius:999px;padding:.35rem 1rem .35rem .35rem;font-size:.98rem;white-space:nowrap;gap:.6rem}
+  .svc-tab img{width:38px;height:38px;border-radius:50%}
+  .svc-tab::after{display:none}
+  .svc-tab[aria-selected="true"]{padding-left:.35rem;border-color:var(--indigo);background:var(--mist)}
   .steps{grid-template-columns:1fr;gap:2rem}
   .steps::before{top:32px;bottom:32px;left:31px;right:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--indigo) 0 10px,transparent 10px 18px)}
   .step{display:grid;grid-template-columns:64px 1fr;gap:0 1.2rem;padding:0}
@@ -405,17 +421,29 @@ footer .socials{margin-top:1.1rem}
   <div class="wrap">
     <div class="sec-head">
       <h2 id="s-title">What we clean</h2>
-      <p>From office towers to industrial sites and long term care facilities, each service is set up around how your building is used.</p>
+      <p>Offices, industrial sites, institutions, condos, long term care facilities and show homes. Choose a service to see it up close.</p>
     </div>
-    <div class="panels" id="panels">
-      <div class="panel active" tabindex="0"><img src="images/office-cleaning.jpg" alt="Cleaners wiping desks and vacuuming an office"><span class="v-label">Office Cleaning</span><div class="p-body"><h3>Office Cleaning</h3><p>Office cleaning and commercial janitorial services in Edmonton.</p><a href="https://rivercitycleaners.ca/office-cleaning-edmonton/">View office cleaning</a></div></div>
-      <div class="panel" tabindex="0"><img src="images/industrial-cleaning.jpg" alt="Technician pressure washing industrial equipment"><span class="v-label">Industrial Cleaning</span><div class="p-body"><h3>Industrial Cleaning</h3><p>Full service industrial cleaning solutions in Edmonton, Canada.</p><a href="https://rivercitycleaners.ca/industrial-cleaning-edmonton/">View industrial cleaning</a></div></div>
-      <div class="panel" tabindex="0"><img src="images/institutional-cleaning.jpg" alt="Janitor mopping a building lobby beside a wet floor sign"><span class="v-label">Institutional Cleaning</span><div class="p-body"><h3>Institutional Cleaning</h3><p>Cleaning and janitorial services for schools, colleges, institutions and more.</p><a href="https://rivercitycleaners.ca/institutional-cleaning-edmonton/">View institutional cleaning</a></div></div>
-      <div class="panel" tabindex="0"><img src="images/common-area-cleaning.jpg" alt="Vacuuming hardwood floors in a condo common area"><span class="v-label">Condo &amp; Common Areas</span><div class="p-body"><h3>Condo &amp; Common Area Cleaning</h3><p>Cleaning buildings’ and condos’ common elements is one of our specialties.</p><a href="https://rivercitycleaners.ca/condo-cleaning-edmonton/">View condo cleaning</a></div></div>
-      <div class="panel" tabindex="0"><img src="images/long-term-care-cleaning.jpg" alt="Cleaner mopping a care facility hallway"><span class="v-label">Long Term Care</span><div class="p-body"><h3>Long Term Care Facility</h3><p>Careful, consistent cleaning for long term care facilities across Edmonton.</p><a href="https://rivercitycleaners.ca/long-term-care-cleaning-edmonton/">View long term care cleaning</a></div></div>
-      <div class="panel" tabindex="0"><img src="images/show-home-cleaning.jpg" alt="Vacuuming a carpet in a show home living room"><span class="v-label">Show Home Cleaning</span><div class="p-body"><h3>Show Home Cleaning</h3><p>Show homes kept spotless for home builders and their visitors.</p><a href="https://rivercitycleaners.ca/show-home-cleaning-edmonton/">View show home cleaning</a></div></div>
-      <div class="panel" tabindex="0"><img src="images/outdoor-cleaning.jpg" alt="Pressure washing the walkway outside a building"><span class="v-label">Outdoor Cleaning</span><div class="p-body"><h3>Outdoor Cleaning</h3><p>Cleaning in front of office buildings, condos and other commercial establishments.</p><a href="https://rivercitycleaners.ca/contact-us/">Ask about outdoor cleaning</a></div></div>
+    <div class="svc">
+      <div class="svc-stage">
+        <figure class="svc-slide on" id="sv0" role="tabpanel" aria-labelledby="st0"><img src="images/office-cleaning.jpg" alt="Cleaner in a navy uniform wiping desks in an open-plan office at dusk"><figcaption><h3>Office Cleaning</h3><p>Office cleaning and commercial janitorial services in Edmonton.</p><a href="https://rivercitycleaners.ca/office-cleaning-edmonton/">View office cleaning</a></figcaption></figure>
+        <figure class="svc-slide" id="sv1" role="tabpanel" aria-labelledby="st1"><img src="images/industrial-cleaning.jpg" alt="Worker in coveralls pressure washing pipes inside an industrial plant" loading="lazy"><figcaption><h3>Industrial Cleaning</h3><p>Full service industrial cleaning solutions in Edmonton, Canada.</p><a href="https://rivercitycleaners.ca/industrial-cleaning-edmonton/">View industrial cleaning</a></figcaption></figure>
+        <figure class="svc-slide" id="sv2" role="tabpanel" aria-labelledby="st2"><img src="images/institutional-cleaning.jpg" alt="Janitor mopping a school hallway beside a wet floor sign" loading="lazy"><figcaption><h3>Institutional Cleaning</h3><p>Cleaning and janitorial services for schools, colleges, institutions and more.</p><a href="https://rivercitycleaners.ca/institutional-cleaning-edmonton/">View institutional cleaning</a></figcaption></figure>
+        <figure class="svc-slide" id="sv3" role="tabpanel" aria-labelledby="st3"><img src="images/common-area-cleaning.jpg" alt="Cleaner vacuuming the carpet in a condo lobby beside the elevators" loading="lazy"><figcaption><h3>Condo &amp; Common Areas</h3><p>Cleaning buildings’ and condos’ common elements is one of our specialties.</p><a href="https://rivercitycleaners.ca/condo-cleaning-edmonton/">View condo cleaning</a></figcaption></figure>
+        <figure class="svc-slide" id="sv4" role="tabpanel" aria-labelledby="st4"><img src="images/long-term-care-cleaning.jpg" alt="Cleaner wiping a handrail in a long term care facility hallway" loading="lazy"><figcaption><h3>Long Term Care Facility</h3><p>Careful, consistent cleaning for long term care facilities across Edmonton.</p><a href="https://rivercitycleaners.ca/long-term-care-cleaning-edmonton/">View long term care cleaning</a></figcaption></figure>
+        <figure class="svc-slide" id="sv5" role="tabpanel" aria-labelledby="st5"><img src="images/show-home-cleaning.jpg" alt="Cleaner wiping the kitchen island in a staged show home" loading="lazy"><figcaption><h3>Show Home Cleaning</h3><p>Show homes kept spotless for home builders and their visitors.</p><a href="https://rivercitycleaners.ca/show-home-cleaning-edmonton/">View show home cleaning</a></figcaption></figure>
+        <figure class="svc-slide" id="sv6" role="tabpanel" aria-labelledby="st6"><img src="images/outdoor-cleaning.jpg" alt="Worker pressure washing the walkway outside an office building" loading="lazy"><figcaption><h3>Outdoor Cleaning</h3><p>Cleaning in front of office buildings, condos and other commercial establishments.</p><a href="https://rivercitycleaners.ca/contact-us/">Ask about outdoor cleaning</a></figcaption></figure>
+      </div>
+      <ul class="svc-list" role="tablist" aria-label="Our services">
+        <li><button class="svc-tab" role="tab" id="st0" aria-controls="sv0" aria-selected="true" tabindex="0"><img alt="" data-thumb="sv0">Office Cleaning</button></li>
+        <li><button class="svc-tab" role="tab" id="st1" aria-controls="sv1" aria-selected="false" tabindex="-1"><img alt="" data-thumb="sv1">Industrial Cleaning</button></li>
+        <li><button class="svc-tab" role="tab" id="st2" aria-controls="sv2" aria-selected="false" tabindex="-1"><img alt="" data-thumb="sv2">Institutional Cleaning</button></li>
+        <li><button class="svc-tab" role="tab" id="st3" aria-controls="sv3" aria-selected="false" tabindex="-1"><img alt="" data-thumb="sv3">Condo &amp; Common Areas</button></li>
+        <li><button class="svc-tab" role="tab" id="st4" aria-controls="sv4" aria-selected="false" tabindex="-1"><img alt="" data-thumb="sv4">Long Term Care Facility</button></li>
+        <li><button class="svc-tab" role="tab" id="st5" aria-controls="sv5" aria-selected="false" tabindex="-1"><img alt="" data-thumb="sv5">Show Home Cleaning</button></li>
+        <li><button class="svc-tab" role="tab" id="st6" aria-controls="sv6" aria-selected="false" tabindex="-1"><img alt="" data-thumb="sv6">Outdoor Cleaning</button></li>
+      </ul>
     </div>
+    <p class="svc-foot">*No residential services. Not sure which service fits your building? <a href="#quote">Request a quote</a> and we’ll walk through it with you.</p>
   </div>
 </section>
 
@@ -423,7 +451,7 @@ footer .socials{margin-top:1.1rem}
 <section class="about" aria-labelledby="a-title">
   <div class="wrap about-grid">
     <div class="about-photo">
-      <img src="images/about-team.jpg" alt="River City Cleaners team member vacuuming" loading="lazy">
+      <img src="images/about-team.jpg" alt="River City Cleaners crew walking through an office lobby with a manager" loading="lazy">
       <div class="since"><b>2004</b>Serving Edmonton<br>and area</div>
     </div>
     <div>
@@ -601,14 +629,14 @@ footer .socials{margin-top:1.1rem}
   var dd=document.getElementById('dd'),ddb=dd.querySelector('button');
   ddb.addEventListener('click',function(){var o=dd.classList.toggle('open');ddb.setAttribute('aria-expanded',o)});
   document.addEventListener('click',function(e){if(!dd.contains(e.target)){dd.classList.remove('open');ddb.setAttribute('aria-expanded',false)}});
-  // expanding service panels
-  var panels=[].slice.call(document.querySelectorAll('.panel'));
-  function activate(p){panels.forEach(function(x){x.classList.toggle('active',x===p);x.setAttribute('aria-expanded',x===p)})}
-  panels.forEach(function(p){
-    p.setAttribute('aria-expanded',p.classList.contains('active'));
-    p.addEventListener('click',function(){activate(p)});
-    p.addEventListener('focus',function(){activate(p)});
-    if(window.matchMedia('(hover:hover)').matches){p.addEventListener('mouseenter',function(){activate(p)})}
+  // service index: tabs swap the photo stage
+  var stabs=[].slice.call(document.querySelectorAll('.svc-tab')),slides=[].slice.call(document.querySelectorAll('.svc-slide'));
+  stabs.forEach(function(t){var th=t.querySelector('img');th.src=document.querySelector('#'+th.getAttribute('data-thumb')+' img').src});
+  function pick(i,focus){stabs.forEach(function(t,k){var on=k===i;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1});slides.forEach(function(sl,k){sl.classList.toggle('on',k===i)});if(focus)stabs[i].focus()}
+  stabs.forEach(function(t,i){
+    t.addEventListener('click',function(){pick(i)});
+    if(window.matchMedia('(hover:hover)').matches){t.addEventListener('mouseenter',function(){pick(i)})}
+    t.addEventListener('keydown',function(e){var k=e.key,n=null;if(k==='ArrowDown'||k==='ArrowRight')n=(i+1)%stabs.length;if(k==='ArrowUp'||k==='ArrowLeft')n=(i-1+stabs.length)%stabs.length;if(n!==null){e.preventDefault();pick(n,true)}});
   });
   // testimonials
   var tabs=[].slice.call(document.querySelectorAll('.logo-tabs button')),panes=[].slice.call(document.querySelectorAll('.rev-pane')),cur=0;
