@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>River City Cleaners | Edmonton Commercial Janitorial Services Since 2004</title>
+<meta name="description" content="River City Cleaners provides commercial janitorial services to offices, restaurants, industrial sites, institutions, condos and home builders in Edmonton since 2004. Environmental Choice and Green Seal certified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#4012A6;      /* sampled from the River City Cleaners logo */
+  --indigo-deep:#1E0C57;
+  --night:#140838;
+  --lilac:#E4DEF8;
+  --mist:#F4F3FB;
+  --orange:#FC8D07;      /* sampled from the original Request a Quote button */
+  --orange-dark:#D97200;
+  --paper:#FFFFFF;
+  --ink:#1A1530;
+  --muted:#5B5675;
+  --line:#E2DFEE;
+  --head-bg:#FFFFFF;
+  --sans:"Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --wrap:1240px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#120A2E; --mist:#1A1040; --lilac:#2B1E66; --ink:#EEEBFA; --muted:#B5AED3;
+    --line:#2E2463; --head-bg:#120A2E; --indigo:#8C6BFF; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#120A2E; --mist:#1A1040; --lilac:#2B1E66; --ink:#EEEBFA; --muted:#B5AED3;
+  --line:#2E2463; --head-bg:#120A2E; --indigo:#8C6BFF; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;font-family:var(--sans);font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,3.6vw,3rem);font-weight:700}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font:600 1rem/1 var(--sans);padding:1.05rem 1.6rem;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-orange{background:var(--orange);color:#1A0E00}
+.btn-orange:hover{background:var(--orange-dark);color:#fff}
+.btn-line{border-color:currentColor;background:transparent}
+.btn-line:hover{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- utility bar ---------- */
+.topbar{background:var(--night);color:#D9D3F5;font-size:.875rem}
+.topbar .wrap{display:flex;gap:1.6rem;align-items:center;min-height:42px;flex-wrap:wrap}
+.topbar a{text-decoration:none}
+.topbar a:hover{color:#fff}
+.topbar .cert{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.topbar .cert svg{width:16px;height:16px;color:#8FD18B}
+.socials{display:flex;gap:.35rem}
+.socials a{width:30px;height:30px;display:grid;place-items:center;border-radius:50%}
+.socials a:hover{background:rgba(255,255,255,.12)}
+.socials svg{width:15px;height:15px;fill:currentColor}
+
+/* ---------- header ---------- */
+header.site{position:sticky;top:0;z-index:50;background:var(--head-bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--head-bg)}
+header.site .wrap{display:flex;align-items:center;gap:2rem;min-height:84px}
+.logo{display:block;background:#fff;border-radius:10px;padding:4px 6px;flex:none}
+.logo img{width:196px;height:auto}
+nav.main{display:flex;align-items:center;gap:.25rem;margin-left:auto}
+nav.main>a,nav.main .dd>button{font:500 .98rem var(--sans);color:var(--ink);text-decoration:none;padding:.6rem .9rem;border-radius:8px;background:none;border:0;cursor:pointer;display:flex;align-items:center;gap:.3rem}
+nav.main>a:hover,nav.main .dd>button:hover{background:var(--mist)}
+nav.main>a[aria-current]{color:var(--indigo);font-weight:600}
+.dd{position:relative}
+.dd>button svg{width:12px;height:12px;transition:transform .2s}
+.dd-menu{position:absolute;top:calc(100% + 8px);left:-.5rem;min-width:270px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:.5rem;box-shadow:0 18px 40px -18px rgba(30,12,87,.35);display:none}
+.dd.open .dd-menu,.dd:hover .dd-menu,.dd:focus-within .dd-menu{display:block}
+.dd.open>button svg,.dd:hover>button svg{transform:rotate(180deg)}
+.dd-menu a{display:block;padding:.6rem .8rem;border-radius:8px;text-decoration:none;font-size:.95rem}
+.dd-menu a:hover{background:var(--mist);color:var(--indigo)}
+.head-cta{margin-left:.75rem}
+nav.main>a.head-cta{background:var(--orange);color:#1A0E00;padding:.85rem 1.3rem;border-radius:999px;font-weight:600}
+nav.main>a.head-cta:hover{background:var(--orange-dark);color:#fff}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.burger svg{width:22px;height:22px;margin:auto}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--mist);overflow:hidden;padding:clamp(3rem,6vw,5.5rem) 0 0}
+.hero .ribbon{position:absolute;left:-5%;right:-5%;bottom:-2px;width:110%;height:auto;color:var(--lilac);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;padding-bottom:clamp(3rem,6vw,5rem)}
+.kicker{display:inline-flex;align-items:center;gap:.6rem;font-weight:600;color:var(--indigo);font-size:1rem;margin-bottom:1.4rem}
+.kicker span{width:34px;height:3px;border-radius:3px;background:var(--orange)}
+.hero h1{font-size:clamp(2.7rem,5.6vw,4.9rem);font-weight:800;letter-spacing:-.035em;line-height:.98;color:var(--indigo-deep);max-width:13ch}
+:root[data-theme="dark"] .hero h1{color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero h1{color:#fff}}
+.hero-swoosh{display:block;width:min(420px,80%);height:auto;margin:.9rem 0 1.6rem;color:var(--indigo)}
+.hero-lede{font-size:1.2rem;color:var(--muted);max-width:52ch;margin-bottom:2rem}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-actions .btn-line{color:var(--indigo-deep)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero-actions .btn-line{color:#fff}}
+:root[data-theme="dark"] .hero-actions .btn-line{color:#fff}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:1.4rem 2.6rem;margin-top:2.8rem;padding-top:1.8rem;border-top:1px solid var(--line)}
+.facts b{display:block;font-size:1.65rem;font-weight:800;letter-spacing:-.02em;color:var(--indigo)}
+.facts small{color:var(--muted);font-size:.92rem}
+
+.quote-card{background:var(--indigo-deep);color:#fff;border-radius:22px 22px 22px 4px;padding:clamp(1.5rem,3vw,2.2rem);position:relative;box-shadow:0 30px 60px -30px rgba(30,12,87,.6)}
+.quote-card h2{font-size:1.75rem;margin-bottom:.35rem}
+.quote-card>p{color:#C9C0F0;font-size:.98rem;margin-bottom:1.3rem}
+.field{display:grid;gap:.35rem;margin-bottom:.85rem}
+.field label{font-size:.85rem;font-weight:500;color:#D8D1F7}
+.field input,.field select,.field textarea{width:100%;font:400 1rem var(--sans);color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:.8rem .9rem}
+.field select option{color:#1A1530}
+.field textarea{min-height:84px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#9D93C9}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);background:rgba(255,255,255,.11)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.quote-card .btn{width:100%;margin-top:.4rem}
+.quote-note{margin-top:.9rem;font-size:.85rem;color:#C9C0F0;text-align:center}
+.form-done{display:none;text-align:center;padding:2rem 0}
+.form-done.show{display:block}
+.form-done svg{width:52px;height:52px;color:var(--orange);margin:0 auto 1rem}
+
+/* ---------- services: expanding panels ---------- */
+.services{padding:clamp(4rem,8vw,7rem) 0 clamp(4rem,7vw,6rem);background:var(--paper)}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:2.6rem}
+.sec-head p{color:var(--muted);max-width:48ch;justify-self:end}
+.panels{display:flex;gap:10px;height:440px}
+.panel{position:relative;flex:1;min-width:0;border-radius:18px;overflow:hidden;cursor:pointer;transition:flex .55s cubic-bezier(.6,.05,.2,1);background:var(--indigo-deep);border:0;padding:0;text-align:left;color:#fff;font:inherit}
+.panel.active{flex:5.2}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.panel.active img{transform:scale(1.03)}
+.panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,8,56,.05) 30%,rgba(20,8,56,.88) 100%)}
+.panel .v-label{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%) rotate(180deg);writing-mode:vertical-rl;font-weight:600;font-size:1.05rem;white-space:nowrap;transition:opacity .25s}
+.panel.active .v-label{opacity:0}
+.panel .p-body{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:clamp(1.3rem,2.5vw,2.2rem);opacity:0;transform:translateY(12px);transition:opacity .35s .2s,transform .35s .2s;pointer-events:none}
+.panel.active .p-body{opacity:1;transform:none;pointer-events:auto}
+.p-body h3{font-size:clamp(1.6rem,2.6vw,2.3rem);margin-bottom:.5rem}
+.p-body p{max-width:44ch;color:#E3DDFA;margin-bottom:1.1rem}
+.p-body a{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:#fff;text-decoration:none;background:rgba(255,255,255,.14);padding:.65rem 1.1rem;border-radius:999px;backdrop-filter:blur(6px)}
+.p-body a:hover{background:var(--orange);color:#1A0E00}
+
+/* ---------- about ---------- */
+.about{background:var(--mist);padding:clamp(4rem,8vw,7rem) 0;position:relative;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.about-photo{position:relative}
+.about-photo img{border-radius:24px 24px 24px 4px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.about-photo .since{position:absolute;right:-18px;bottom:-22px;background:var(--orange);color:#1A0E00;border-radius:16px;padding:1rem 1.3rem;font-weight:600;line-height:1.25;box-shadow:0 18px 30px -18px rgba(0,0,0,.45)}
+.about-photo .since b{display:block;font-size:2.2rem;font-weight:800;letter-spacing:-.03em}
+.about h2{margin-bottom:1.3rem}
+.about .lead{font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,2vw,1.6rem);line-height:1.4;color:var(--indigo);margin-bottom:1.2rem}
+.about .body{color:var(--muted);margin-bottom:1.6rem}
+.badges{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;padding-top:1.5rem;border-top:1px solid var(--line)}
+.badges img{width:68px;height:68px;object-fit:contain;background:#fff;border-radius:50%;padding:4px}
+.badges p{font-size:.95rem;color:var(--muted);max-width:28ch}
+
+/* ---------- commitments ---------- */
+.commit{background:var(--indigo-deep);color:#fff;padding:clamp(4rem,8vw,7rem) 0}
+.commit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,5rem)}
+.commit-intro{position:sticky;top:120px;align-self:start}
+.commit-intro h2{margin-bottom:1.2rem}
+.commit-intro p{color:#C9C0F0;max-width:44ch;margin-bottom:1.8rem}
+.commit-list{list-style:none;margin:0;padding:0}
+.commit-list li{display:grid;grid-template-columns:56px 1fr;gap:1.2rem;padding:1.7rem 0;border-top:1px solid rgba(255,255,255,.14)}
+.commit-list li:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.ico{width:56px;height:56px;border-radius:16px;background:rgba(252,141,7,.14);color:var(--orange);display:grid;place-items:center}
+.ico svg{width:26px;height:26px}
+.commit-list h3{font-size:1.35rem;margin-bottom:.35rem;letter-spacing:-.01em}
+.commit-list p{color:#C9C0F0}
+
+/* ---------- quote process ---------- */
+.process{padding:clamp(4rem,8vw,7rem) 0;background:var(--paper)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:2.6rem;counter-reset:s;position:relative}
+.step{padding:0 2rem 0 0;position:relative}
+.step .dot{width:64px;height:64px;border-radius:50%;background:var(--indigo);color:#fff;display:grid;place-items:center;font-size:1.5rem;font-weight:800;position:relative;z-index:1;margin-bottom:1.4rem;box-shadow:0 0 0 8px var(--paper)}
+.steps::before{content:"";position:absolute;top:32px;left:32px;right:calc(33.33% - 32px);height:2px;background:repeating-linear-gradient(90deg,var(--indigo) 0 10px,transparent 10px 18px);opacity:.4}
+.step h3{font-size:1.4rem;margin-bottom:.5rem}
+.step p{color:var(--muted);max-width:34ch}
+
+/* ---------- testimonials ---------- */
+.reviews{background:var(--mist);padding:clamp(4rem,8vw,7rem) 0}
+.rev-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.rev-grid h2{margin-bottom:1rem}
+.rev-grid .sub{color:var(--muted);margin-bottom:2rem}
+.logo-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.logo-tabs button{background:#fff;border:2px solid transparent;border-radius:14px;height:86px;padding:10px 14px;cursor:pointer;display:grid;place-items:center;transition:border-color .2s,transform .2s;filter:grayscale(1);opacity:.75}
+.logo-tabs button:hover{opacity:1;filter:none}
+.logo-tabs button[aria-selected="true"]{border-color:var(--indigo);filter:none;opacity:1}
+.logo-tabs img{max-height:64px;max-width:100%;width:auto;object-fit:contain}
+.rev-card{background:var(--paper);border-radius:24px;padding:clamp(1.8rem,4vw,3.2rem);position:relative;min-height:380px;border:1px solid var(--line)}
+.rev-card .mark{font-family:var(--serif);font-size:7rem;line-height:.6;color:var(--orange);height:46px;display:block}
+.rev-card blockquote{margin:0 0 1.8rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.1vw,1.7rem);line-height:1.45;color:var(--ink)}
+.rev-who{display:flex;align-items:center;gap:1rem}
+.rev-who .av{width:48px;height:48px;border-radius:50%;background:var(--indigo);color:#fff;display:grid;place-items:center;font-weight:700}
+.rev-who b{display:block}
+.rev-who small{color:var(--muted);font-size:.95rem}
+.rev-pane{display:none}
+.rev-pane.on{display:block;animation:fadeIn .45s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.rev-nav{display:flex;gap:.5rem;position:absolute;right:clamp(1.2rem,3vw,2.2rem);top:clamp(1.2rem,3vw,2.2rem)}
+.rev-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.rev-nav button:hover{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+.rev-nav svg{width:18px;height:18px}
+
+/* ---------- faq ---------- */
+.faq{padding:clamp(4rem,8vw,7rem) 0;background:var(--paper)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,5rem)}
+.faq-grid .sub{color:var(--muted);margin:1rem 0 1.6rem;max-width:36ch}
+.faq-call{display:flex;align-items:center;gap:.9rem;text-decoration:none;font-weight:700;font-size:1.25rem;color:var(--indigo)}
+.faq-call span{width:52px;height:52px;border-radius:50%;background:var(--orange);color:#1A0E00;display:grid;place-items:center}
+.faq-call svg{width:22px;height:22px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.35rem 0;font-weight:600;font-size:1.15rem}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--mist);position:relative;transition:background .2s,transform .3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--indigo);transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
+details[open] summary i{background:var(--indigo)}
+details[open] summary i::before,details[open] summary i::after{background:#fff}
+details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 3rem 1.4rem 0;color:var(--muted)}
+
+/* ---------- cta band ---------- */
+.cta{padding:0 0 clamp(4rem,8vw,6rem);background:var(--paper)}
+.cta-box{position:relative;overflow:hidden;background:var(--indigo);color:#fff;border-radius:28px;padding:clamp(2.2rem,5vw,4rem);display:grid;grid-template-columns:1.3fr auto;gap:2rem;align-items:center}
+.cta-box h2{font-size:clamp(1.9rem,3.4vw,2.8rem);max-width:18ch;position:relative}
+.cta-box p{color:#DDD5FF;margin-top:.8rem;position:relative}
+.cta-box .acts{display:flex;flex-direction:column;gap:.7rem;position:relative}
+.cta-box .btn-line{color:#fff}
+.cta-box .btn-line:hover{background:#fff;color:var(--indigo-deep);border-color:#fff}
+.cta-box svg.r{position:absolute;right:-10%;bottom:-30%;width:80%;color:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cta-box{background:#3A1A9C}}
+:root[data-theme="dark"] .cta-box{background:#3A1A9C}
+
+/* ---------- footer ---------- */
+footer{background:var(--night);color:#C9C0F0;padding:clamp(3.5rem,6vw,5rem) 0 0;font-size:.98rem}
+.f-grid{display:grid;grid-template-columns:1.3fr .9fr .9fr 1.2fr;gap:2.5rem}
+footer .logo{display:inline-block;margin-bottom:1.2rem}
+footer .logo img{width:180px}
+footer h4{color:#fff;font-size:1.05rem;margin:0 0 1rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.f-badges{display:flex;gap:.7rem;margin-top:1.3rem}
+.f-badges img{width:58px;height:58px;border-radius:50%;background:#fff;padding:3px;object-fit:contain}
+.news{display:flex;margin-top:.9rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:4px}
+.news input{flex:1;min-width:0;background:none;border:0;color:#fff;font:400 .98rem var(--sans);padding:.6rem .9rem}
+.news input::placeholder{color:#9D93C9}
+.news input:focus{outline:none}
+.news button{border:0;border-radius:999px;background:var(--orange);color:#1A0E00;font:600 .95rem var(--sans);padding:.6rem 1.1rem;cursor:pointer}
+.news-msg{font-size:.88rem;margin-top:.6rem;min-height:1.2em;color:#8FD18B}
+.f-bottom{margin-top:3.2rem;border-top:1px solid rgba(255,255,255,.12);padding:1.4rem 0;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.9rem}
+.f-bottom a{color:#fff;font-weight:600}
+footer .socials a{background:rgba(255,255,255,.08);width:38px;height:38px}
+footer .socials{margin-top:1.1rem}
+
+/* ---------- mobile bar ---------- */
+.mbar{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  nav.main{display:none}
+  .head-cta{display:none}
+  .burger{display:grid}
+  nav.main.open{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:100%;left:0;right:0;background:var(--head-bg);border-bottom:1px solid var(--line);padding:.8rem clamp(1.1rem,4vw,2.5rem) 1.2rem;gap:.1rem;max-height:calc(100vh - 120px);overflow:auto}
+  nav.main.open .dd-menu{position:static;display:block;box-shadow:none;border:0;padding:0 0 0 .8rem;min-width:0}
+  nav.main.open .dd>button svg{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .topbar .cert{display:none}
+  .sec-head,.about-grid,.commit-grid,.rev-grid,.faq-grid,.cta-box{grid-template-columns:1fr}
+  .sec-head p{justify-self:start}
+  .commit-intro{position:static}
+  .panels{flex-direction:column;height:auto;gap:10px}
+  .panel,.panel.active{flex:none;height:240px}
+  .panel .v-label{display:none}
+  .panel .p-body{opacity:1;transform:none;pointer-events:auto}
+    .p-body p{display:none}
+  .panel.active .p-body p{display:block}
+  .panel.active{height:340px}
+  .steps{grid-template-columns:1fr;gap:2rem}
+  .steps::before{top:32px;bottom:32px;left:31px;right:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--indigo) 0 10px,transparent 10px 18px)}
+  .step{display:grid;grid-template-columns:64px 1fr;gap:0 1.2rem;padding:0}
+  .step .dot{grid-row:span 2;margin:0}
+  .about-photo .since{right:12px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:var(--head-bg);border-top:1px solid var(--line)}
+  .mbar a{padding:.85rem;font-size:.95rem}
+  footer{padding-bottom:80px}
+}
+@media (max-width:560px){
+  .topbar .mail{display:none}
+  .logo img{width:160px}
+  .facts{grid-template-columns:1fr;gap:.9rem}
+  .facts div{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap}
+  .facts b{font-size:1.3rem}
+  .row2{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  .logo-tabs button{height:70px}
+}
+</style>
+</head>
+<body>
+
+<!-- utility bar -->
+<div class="topbar">
+  <div class="wrap">
+    <a href="tel:7804365006">Edmonton: 780-436-5006</a>
+    <a class="mail" href="mailto:info@rivercitycleaners.ca">info@rivercitycleaners.ca</a>
+    <span class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Environmental Choice &amp; Green Seal certified</span>
+    <div class="socials" aria-label="Social media">
+      <a href="https://www.facebook.com/River-City-Cleaners-243297079373758/" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8Z"/></svg></a>
+      <a href="https://twitter.com/R_CityCleaners" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M17.8 3h3.3l-7.2 8.2L22.3 21h-6.6l-5.2-6.8L4.6 21H1.3l7.7-8.8L1 3h6.8l4.7 6.2L17.8 3Zm-1.2 16h1.8L6.5 4.9H4.6L16.6 19Z"/></svg></a>
+      <a href="https://www.linkedin.com/company/river-city-cleaners/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4V9.5Z"/></svg></a>
+      <a href="https://g.page/RiiverCityCleaners?share" aria-label="Google Business Profile"><svg viewBox="0 0 24 24"><path d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3ZM12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22ZM6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2L6.4 14ZM12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10C7.2 7.7 9.4 6 12 6Z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- header -->
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="https://rivercitycleaners.ca/" aria-label="River City Cleaners home"><img src="images/logo.jpg" alt="River City Cleaners" width="370" height="119"></a>
+    <nav class="main" id="nav" aria-label="Main">
+      <a href="https://rivercitycleaners.ca/" aria-current="page">Home</a>
+      <a href="https://rivercitycleaners.ca/about/">About</a>
+      <div class="dd" id="dd">
+        <button type="button" aria-expanded="false" aria-controls="dd-menu">Services <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 4 4 4 4-4"/></svg></button>
+        <div class="dd-menu" id="dd-menu">
+          <a href="https://rivercitycleaners.ca/office-cleaning-edmonton/">Office Cleaning Services</a>
+          <a href="https://rivercitycleaners.ca/industrial-cleaning-edmonton/">Industrial Cleaning</a>
+          <a href="https://rivercitycleaners.ca/institutional-cleaning-edmonton/">Institutional Cleaning</a>
+          <a href="https://rivercitycleaners.ca/condo-cleaning-edmonton/">Condo Cleaning</a>
+          <a href="https://rivercitycleaners.ca/long-term-care-cleaning-edmonton/">Long Term Care Facility</a>
+          <a href="https://rivercitycleaners.ca/show-home-cleaning-edmonton/">Show Home Cleaning</a>
+        </div>
+      </div>
+      <a href="https://rivercitycleaners.ca/about/employment/">Employment</a>
+      <a href="https://rivercitycleaners.ca/contact-us/">Contact Us</a>
+      <a class="btn btn-orange head-cta" href="#quote">Request a quote</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main>
+<!-- hero -->
+<section class="hero">
+  <svg class="ribbon" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 160C220 60 420 40 640 110s420 120 800-40v150H0Z"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker"><span></span>Commercial janitorial services in Edmonton</div>
+      <h1>Cleaning Edmonton’s workplaces since 2004.</h1>
+      <svg class="hero-swoosh" viewBox="0 0 420 40" aria-hidden="true"><path fill="currentColor" d="M2 34C70 30 120 6 190 10c60 4 70 20 130 16 40-3 70-14 98-24-24 18-58 32-100 34-62 3-76-14-130-16C120 18 72 36 2 34Z"/></svg>
+      <p class="hero-lede">Offices, restaurants, industrial sites, institutions, condos and home builders. We walk through your building, then build a custom cleaning package around your company’s needs.</p>
+      <div class="hero-actions">
+        <a class="btn btn-orange" href="#quote">Request a quote</a>
+        <a class="btn btn-line" href="tel:7804365006"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>780-436-5006</a>
+      </div>
+      <div class="facts">
+        <div><b>18+ years</b><small>Commercial cleaning experience</small></div>
+        <div><b>Family-owned</b><small>And operated in Edmonton</small></div>
+        <div><b>Same cleaner</b><small>Every visit, someone you trust</small></div>
+      </div>
+    </div>
+
+    <aside class="quote-card" id="quote" aria-labelledby="q-title">
+      <form id="qform" action="https://rivercitycleaners.ca/contact-us/" method="get">
+        <h2 id="q-title">Request a quote</h2>
+        <p>Tell us about your space. We’ll prepare a quote built for your building.</p>
+        <div class="row2">
+          <div class="field"><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required placeholder="Your name"></div>
+          <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required placeholder="780-000-0000"></div>
+        </div>
+        <div class="field"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required placeholder="you@company.ca"></div>
+        <div class="field"><label for="q-service">Service required</label>
+          <select id="q-service" name="service" required>
+            <option>Office Cleaning</option><option>Commercial Cleaning</option><option>Industrial Cleaning</option><option>Institutional Cleaning</option><option>Condo Cleaning</option><option>Long Term Care Facility</option>
+          </select></div>
+        <div class="field"><label for="q-msg">About your building</label><textarea id="q-msg" name="message" placeholder="Type of space, size, how often you need cleaning"></textarea></div>
+        <button class="btn btn-orange" type="submit">Send quote request</button>
+        <p class="quote-note">*No residential services</p>
+      </form>
+      <div class="form-done" id="qdone" role="status">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+        <h2>Request sent</h2>
+        <p style="color:#C9C0F0;margin-top:.4rem">We’ll get back to you shortly. For anything urgent, call 780-436-5006.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- services -->
+<section class="services" id="services" aria-labelledby="s-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="s-title">What we clean</h2>
+      <p>From office towers to industrial sites and long term care facilities, each service is set up around how your building is used.</p>
+    </div>
+    <div class="panels" id="panels">
+      <div class="panel active" tabindex="0"><img src="images/office-cleaning.jpg" alt="Cleaners wiping desks and vacuuming an office"><span class="v-label">Office Cleaning</span><div class="p-body"><h3>Office Cleaning</h3><p>Office cleaning and commercial janitorial services in Edmonton.</p><a href="https://rivercitycleaners.ca/office-cleaning-edmonton/">View office cleaning</a></div></div>
+      <div class="panel" tabindex="0"><img src="images/industrial-cleaning.jpg" alt="Technician pressure washing industrial equipment"><span class="v-label">Industrial Cleaning</span><div class="p-body"><h3>Industrial Cleaning</h3><p>Full service industrial cleaning solutions in Edmonton, Canada.</p><a href="https://rivercitycleaners.ca/industrial-cleaning-edmonton/">View industrial cleaning</a></div></div>
+      <div class="panel" tabindex="0"><img src="images/institutional-cleaning.jpg" alt="Janitor mopping a building lobby beside a wet floor sign"><span class="v-label">Institutional Cleaning</span><div class="p-body"><h3>Institutional Cleaning</h3><p>Cleaning and janitorial services for schools, colleges, institutions and more.</p><a href="https://rivercitycleaners.ca/institutional-cleaning-edmonton/">View institutional cleaning</a></div></div>
+      <div class="panel" tabindex="0"><img src="images/common-area-cleaning.jpg" alt="Vacuuming hardwood floors in a condo common area"><span class="v-label">Condo &amp; Common Areas</span><div class="p-body"><h3>Condo &amp; Common Area Cleaning</h3><p>Cleaning buildings’ and condos’ common elements is one of our specialties.</p><a href="https://rivercitycleaners.ca/condo-cleaning-edmonton/">View condo cleaning</a></div></div>
+      <div class="panel" tabindex="0"><img src="images/long-term-care-cleaning.jpg" alt="Cleaner mopping a care facility hallway"><span class="v-label">Long Term Care</span><div class="p-body"><h3>Long Term Care Facility</h3><p>Careful, consistent cleaning for long term care facilities across Edmonton.</p><a href="https://rivercitycleaners.ca/long-term-care-cleaning-edmonton/">View long term care cleaning</a></div></div>
+      <div class="panel" tabindex="0"><img src="images/show-home-cleaning.jpg" alt="Vacuuming a carpet in a show home living room"><span class="v-label">Show Home Cleaning</span><div class="p-body"><h3>Show Home Cleaning</h3><p>Show homes kept spotless for home builders and their visitors.</p><a href="https://rivercitycleaners.ca/show-home-cleaning-edmonton/">View show home cleaning</a></div></div>
+      <div class="panel" tabindex="0"><img src="images/outdoor-cleaning.jpg" alt="Pressure washing the walkway outside a building"><span class="v-label">Outdoor Cleaning</span><div class="p-body"><h3>Outdoor Cleaning</h3><p>Cleaning in front of office buildings, condos and other commercial establishments.</p><a href="https://rivercitycleaners.ca/contact-us/">Ask about outdoor cleaning</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section class="about" aria-labelledby="a-title">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="images/about-team.jpg" alt="River City Cleaners team member vacuuming" loading="lazy">
+      <div class="since"><b>2004</b>Serving Edmonton<br>and area</div>
+    </div>
+    <div>
+      <h2 id="a-title">Commercial cleaning services in Edmonton</h2>
+      <p class="lead">Our clients range from accounting firms to zoo facilities, and everything in between.</p>
+      <p class="body">River City Cleaners has been providing commercial cleaning services in Edmonton and surrounding communities since 2004. We are family-owned and operated, and we’ve enjoyed good success because of our high standards and customer service. We are thorough in our quote and create a custom service package designed specifically for your company’s needs.</p>
+      <div class="badges">
+        <img src="images/environmental-choice.png" alt="Environmental Choice certified" loading="lazy">
+        <img src="images/green-seal.jpg" alt="Green Seal certified" loading="lazy">
+        <p>Environmental Choice &amp; Green Seal certified cleaning products.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- commitments -->
+<section class="commit" aria-labelledby="c-title">
+  <div class="wrap commit-grid">
+    <div class="commit-intro">
+      <h2 id="c-title">What you can expect from us</h2>
+      <p>Your business and your needs matter a great deal to us, and we take great care to maintain the trust you place in us. These are the points clients look for in a commercial cleaning company, and we work to deliver them every visit.</p>
+      <a class="btn btn-orange" href="#quote">Request a quote</a>
+    </div>
+    <ul class="commit-list">
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><h3>High standards of commercial cleaning</h3><p>Thorough, detailed work. Our clients notice how meticulous our cleaners are.</p></div></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><path d="M16 3.1a4 4 0 0 1 0 7.8M22 21v-1a6 6 0 0 0-4-5.6"/></svg></span><div><h3>Reliable, consistent staff</h3><p>You’ll have the same cleaning professional on each visit, someone you know and trust.</p></div></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><h3>On-site supervision</h3><p>Our cleaning staff and management stay involved with your building, from the first walk-through onward.</p></div></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><div><h3>Competitive pricing</h3><p>A custom package for your company, with all cleaning supplies and equipment furnished.</p></div></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg></span><div><h3>Safe, environmentally responsible products</h3><p>All of our cleaning products meet the highest environmental and safety standards.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- quote process -->
+<section class="process" aria-labelledby="p-title">
+  <div class="wrap">
+    <h2 id="p-title">How your quote comes together</h2>
+    <div class="steps">
+      <div class="step"><span class="dot">1</span><h3>Request a quote</h3><p>Call 780-436-5006 or send the form with the service you need.</p></div>
+      <div class="step"><span class="dot">2</span><h3>Building walk-through</h3><p>We walk through your building to assess your needs, and you meet our cleaning staff and management.</p></div>
+      <div class="step"><span class="dot">3</span><h3>Your custom package</h3><p>We create a service package designed for your company, with the same cleaner every visit.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- testimonials -->
+<section class="reviews" aria-labelledby="r-title">
+  <div class="wrap rev-grid">
+    <div>
+      <h2 id="r-title">What our happy clients say</h2>
+      <p class="sub">Restaurants, retailers, home builders and non-profits across Edmonton.</p>
+      <div class="logo-tabs" role="tablist" aria-label="Choose a client">
+        <button role="tab" aria-selected="true" aria-controls="rv0" id="rt0"><img src="images/client-ikki.png" alt="Ikki Izakaya"></button>
+        <button role="tab" aria-selected="false" aria-controls="rv1" id="rt1"><img src="images/client-o2s.png" alt="O2’s Tap House &amp; Grill"></button>
+        <button role="tab" aria-selected="false" aria-controls="rv2" id="rt2"><img src="images/client-just-tires.jpg" alt="Just Tires.ca"></button>
+        <button role="tab" aria-selected="false" aria-controls="rv3" id="rt3"><img src="images/client-alberta-spca.jpg" alt="Alberta SPCA"></button>
+        <button role="tab" aria-selected="false" aria-controls="rv4" id="rt4"><img src="images/client-daytona-homes.jpg" alt="Daytona Homes"></button>
+      </div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-nav"><button type="button" id="rprev" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button><button type="button" id="rnext" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button></div>
+      <span class="mark" aria-hidden="true">“</span>
+      <div class="rev-pane on" role="tabpanel" id="rv0" aria-labelledby="rt0"><blockquote>It was difficult to find a cleaner that was able to meet our standards. After going through a few cleaners, we decided to call River City and it was one of the best decisions that we have made. Their attention to detail is amazing, and they have been able to meet our needs.</blockquote><div class="rev-who"><span class="av">RY</span><div><b>Ryan Yu</b><small>Operations Manager, Ikki Izakaya</small></div></div></div>
+      <div class="rev-pane" role="tabpanel" id="rv1" aria-labelledby="rt1"><blockquote>We are currently customers of River City Cleaners, and they have been a wonderful company to deal with! Their professionalism and attention to detail have been considerable assets, and we would recommend this company to anyone.</blockquote><div class="rev-who"><span class="av">WS</span><div><b>Wayne Seifeddine</b><small>Co-Owner, O2’s Tap House &amp; Grill</small></div></div></div>
+      <div class="rev-pane" role="tabpanel" id="rv2" aria-labelledby="rt2"><blockquote>Setting up new services with RCC has been a breeze. Their quoting process was thorough and professional. They have been cleaning our store now for over 2 months and we couldn’t be happier. Great job!</blockquote><div class="rev-who"><span class="av">SK</span><div><b>Shawn Khan</b><small>Owner, Just Tires.ca</small></div></div></div>
+      <div class="rev-pane" role="tabpanel" id="rv3" aria-labelledby="rt3"><blockquote>Their professional and courteous staff were ready to assist us, from the initial setup appointment, which involved a thorough walk through of our building assessing our needs, to meeting their cleaning staff and management. Our staff has also noticed how meticulous the cleaners are in their work.</blockquote><div class="rev-who"><span class="av">RB</span><div><b>Ruth-Ann Burak</b><small>Admin Support, Alberta SPCA</small></div></div></div>
+      <div class="rev-pane" role="tabpanel" id="rv4" aria-labelledby="rt4"><blockquote>River City Cleaners have been providing Daytona Homes with outstanding service for over seven years. We are always satisfied with the quality of their cleaning and their unwavering commitment to providing our team with first-rate service.</blockquote><div class="rev-who"><span class="av">AM</span><div><b>Amy Mack</b><small>Office Coordinator, Daytona Homes</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="faq" aria-labelledby="f-title">
+  <div class="wrap faq-grid">
+    <div>
+      <h2 id="f-title">Frequently asked questions</h2>
+      <p class="sub">Our service teams take calls Monday to Sunday, 9:00 am to 5:00 pm.</p>
+      <a class="faq-call" href="tel:7804365006"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>780-436-5006</a>
+    </div>
+    <div>
+      <details open><summary>What methods of payment do you accept?<i></i></summary><p>We accept Visa, MasterCard, cheque, or EFTs.</p></details>
+      <details><summary>What are your office working hours?<i></i></summary><p>We maintain a virtual office in order to minimize our costs. Our service teams can take your calls from Monday to Sunday, 9:00 am to 5:00 pm. If you leave a message we will endeavour to respond as quickly as possible.</p></details>
+      <details><summary>Are you insured?<i></i></summary><p>Yes. We have comprehensive public liability coverage. Our insurance policy will cover any accidental damages or theft on your property caused or perpetrated by our cleaners.</p></details>
+      <details><summary>Will I have the same cleaning person each visit?<i></i></summary><p>Yes, you will have the same cleaning professional for each visit. We know how important it is to have someone you know and trust cleaning your business or workspace.</p></details>
+      <details><summary>Do you furnish the cleaning supplies?<i></i></summary><p>Yes, we furnish all cleaning supplies and equipment. Disposable items such as toilet paper and hand soap can be provided at our cost plus 15%.</p></details>
+      <details><summary>What is your service area?<i></i></summary><p>We provide commercial cleaning services in Edmonton and the surrounding area.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- cta -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <svg class="r" viewBox="0 0 420 40" aria-hidden="true"><path fill="currentColor" d="M2 34C70 30 120 6 190 10c60 4 70 20 130 16 40-3 70-14 98-24-24 18-58 32-100 34-62 3-76-14-130-16C120 18 72 36 2 34Z"/></svg>
+      <div>
+        <h2>Get a cleaning package built for your building.</h2>
+        <p>Edmonton commercial janitorial services. *No residential services.</p>
+      </div>
+      <div class="acts">
+        <a class="btn btn-orange" href="#quote">Request a quote</a>
+        <a class="btn btn-line" href="tel:7804365006">Call 780-436-5006</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="https://rivercitycleaners.ca/"><img src="images/logo.jpg" alt="River City Cleaners" loading="lazy"></a>
+        <p>Edmonton commercial janitorial services, family-owned and operated since 2004.</p>
+        <div class="f-badges"><img src="images/environmental-choice.png" alt="Environmental Choice certified" loading="lazy"><img src="images/green-seal.jpg" alt="Green Seal certified" loading="lazy"></div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="https://rivercitycleaners.ca/office-cleaning-edmonton/">Office Cleaning Services</a></li>
+          <li><a href="https://rivercitycleaners.ca/industrial-cleaning-edmonton/">Industrial Cleaning</a></li>
+          <li><a href="https://rivercitycleaners.ca/institutional-cleaning-edmonton/">Institutional Cleaning</a></li>
+          <li><a href="https://rivercitycleaners.ca/condo-cleaning-edmonton/">Condo Cleaning</a></li>
+          <li><a href="https://rivercitycleaners.ca/long-term-care-cleaning-edmonton/">Long Term Care Facility</a></li>
+          <li><a href="https://rivercitycleaners.ca/show-home-cleaning-edmonton/">Show Home Cleaning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://rivercitycleaners.ca/about/">About</a></li>
+          <li><a href="https://rivercitycleaners.ca/about/employment/">Employment</a></li>
+          <li><a href="https://rivercitycleaners.ca/contact-us/">Contact Us</a></li>
+          <li><a href="https://rivercitycleaners.ca/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:7804365006">780-436-5006</a></li>
+          <li><a href="tel:5874100550">(587) 410-0550</a></li>
+          <li><a href="mailto:info@rivercitycleaners.ca">info@rivercitycleaners.ca</a></li>
+        </ul>
+        <h4 style="margin-top:1.6rem">Newsletter signup</h4>
+        <form class="news" id="news"><label for="n-email" class="sr" style="position:absolute;left:-9999px">Email address</label><input id="n-email" type="email" required placeholder="Your email address"><button type="submit">Sign up</button></form>
+        <p class="news-msg" id="news-msg" role="status"></p>
+        <div class="socials">
+          <a href="https://www.facebook.com/River-City-Cleaners-243297079373758/" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8Z"/></svg></a>
+          <a href="https://twitter.com/R_CityCleaners" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M17.8 3h3.3l-7.2 8.2L22.3 21h-6.6l-5.2-6.8L4.6 21H1.3l7.7-8.8L1 3h6.8l4.7 6.2L17.8 3Zm-1.2 16h1.8L6.5 4.9H4.6L16.6 19Z"/></svg></a>
+          <a href="https://www.linkedin.com/company/river-city-cleaners/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4V9.5Z"/></svg></a>
+          <a href="https://g.page/RiiverCityCleaners?share" aria-label="Google Business Profile"><svg viewBox="0 0 24 24"><path d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3ZM12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22ZM6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2L6.4 14ZM12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10C7.2 7.7 9.4 6 12 6Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© River City Cleaners, Edmonton Alberta, 2026</span>
+      <span>Design by <a href="https://cleaningdigital.ca/">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-line" href="tel:7804365006" style="color:var(--indigo)">Call now</a>
+  <a class="btn btn-orange" href="#quote">Request a quote</a>
+</div>
+
+<script>
+(function(){
+  // mobile menu
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');burger.setAttribute('aria-expanded',false)})});
+  // services dropdown (touch / keyboard)
+  var dd=document.getElementById('dd'),ddb=dd.querySelector('button');
+  ddb.addEventListener('click',function(){var o=dd.classList.toggle('open');ddb.setAttribute('aria-expanded',o)});
+  document.addEventListener('click',function(e){if(!dd.contains(e.target)){dd.classList.remove('open');ddb.setAttribute('aria-expanded',false)}});
+  // expanding service panels
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  function activate(p){panels.forEach(function(x){x.classList.toggle('active',x===p);x.setAttribute('aria-expanded',x===p)})}
+  panels.forEach(function(p){
+    p.setAttribute('aria-expanded',p.classList.contains('active'));
+    p.addEventListener('click',function(){activate(p)});
+    p.addEventListener('focus',function(){activate(p)});
+    if(window.matchMedia('(hover:hover)').matches){p.addEventListener('mouseenter',function(){activate(p)})}
+  });
+  // testimonials
+  var tabs=[].slice.call(document.querySelectorAll('.logo-tabs button')),panes=[].slice.call(document.querySelectorAll('.rev-pane')),cur=0;
+  function show(i){cur=(i+tabs.length)%tabs.length;tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===cur)});panes.forEach(function(p,k){p.classList.toggle('on',k===cur)})}
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i)})});
+  document.getElementById('rprev').addEventListener('click',function(){show(cur-1)});
+  document.getElementById('rnext').addEventListener('click',function(){show(cur+1)});
+  // forms (front-end preview only)
+  document.getElementById('qform').addEventListener('submit',function(e){e.preventDefault();this.style.display='none';document.getElementById('qdone').classList.add('show')});
+  document.getElementById('news').addEventListener('submit',function(e){e.preventDefault();document.getElementById('news-msg').textContent='Thanks, you’re on the list.';this.reset()});
+})();
+</script>
+</body>
+</html>
