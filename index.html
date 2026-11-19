@@ -94,43 +94,50 @@ nav.main>a.head-cta:hover{background:var(--orange-dark);color:#fff}
 .burger svg{width:22px;height:22px;margin:auto}
 
 /* ---------- hero ---------- */
-.hero{position:relative;background:var(--mist);overflow:hidden;padding:clamp(3rem,6vw,5.5rem) 0 0}
-.hero .ribbon{position:absolute;left:-5%;right:-5%;bottom:-2px;width:110%;height:auto;color:var(--lilac);pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;padding-bottom:clamp(3rem,6vw,5rem)}
-.kicker{display:inline-flex;align-items:center;gap:.6rem;font-weight:600;color:var(--indigo);font-size:1rem;margin-bottom:1.4rem}
+.hero{position:relative;background:radial-gradient(120% 90% at 85% 10%,#3A1B9E 0%,rgba(58,27,158,0) 55%),var(--indigo-deep);color:#fff;overflow:hidden;padding:clamp(2.8rem,5.5vw,5rem) 0 0}
+.hero .ribbons{position:absolute;inset:auto -10% 40px -10%;width:120%;height:auto;pointer-events:none;color:#fff;opacity:.07}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;padding-bottom:clamp(7rem,10vw,8.5rem)}
+.kicker{display:inline-flex;align-items:center;gap:.6rem;font-weight:600;color:#CBBEFF;font-size:1rem;margin-bottom:1.4rem}
 .kicker span{width:34px;height:3px;border-radius:3px;background:var(--orange)}
-.hero h1{font-size:clamp(2.7rem,5.6vw,4.9rem);font-weight:800;letter-spacing:-.035em;line-height:.98;color:var(--indigo-deep);max-width:13ch}
-:root[data-theme="dark"] .hero h1{color:#fff}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero h1{color:#fff}}
-.hero-swoosh{display:block;width:min(420px,80%);height:auto;margin:.9rem 0 1.6rem;color:var(--indigo)}
-.hero-lede{font-size:1.2rem;color:var(--muted);max-width:52ch;margin-bottom:2rem}
+.hero h1{font-size:clamp(2.8rem,5.8vw,5.1rem);font-weight:800;letter-spacing:-.035em;line-height:.97;color:#fff;max-width:12ch}
+.hero-swoosh{display:block;width:min(420px,80%);height:auto;margin:1rem 0 1.6rem;color:var(--orange)}
+.hero-lede{font-size:1.2rem;color:#D3CAF5;max-width:48ch;margin-bottom:2rem}
 .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
-.hero-actions .btn-line{color:var(--indigo-deep)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero-actions .btn-line{color:#fff}}
-:root[data-theme="dark"] .hero-actions .btn-line{color:#fff}
-.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:1.4rem 2.6rem;margin-top:2.8rem;padding-top:1.8rem;border-top:1px solid var(--line)}
-.facts b{display:block;font-size:1.65rem;font-weight:800;letter-spacing:-.02em;color:var(--indigo)}
-.facts small{color:var(--muted);font-size:.92rem}
+.hero-actions .btn-line{color:#fff}
+.hero-actions .btn-line:hover{background:#fff;color:var(--indigo-deep);border-color:#fff}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:1.2rem 2.4rem;margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.16)}
+.facts b{display:block;white-space:nowrap;font-size:1.55rem;font-weight:800;letter-spacing:-.02em;color:#fff}
+.facts small{color:#B9AEE6;font-size:.92rem}
+.hero-visual{position:relative}
+.hero-photo{position:relative;border-radius:30px 30px 30px 6px;overflow:hidden;aspect-ratio:1/1.2;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:64% center}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,12,87,0) 55%,rgba(30,12,87,.45) 100%)}
+.hero-cert{position:absolute;left:clamp(-2rem,-2.5vw,-1rem);bottom:2rem;z-index:2;display:flex;align-items:center;gap:.8rem;background:var(--paper);color:var(--ink);border-radius:18px 18px 18px 4px;padding:.75rem 1.1rem .75rem .75rem;box-shadow:0 24px 40px -22px rgba(0,0,0,.55);max-width:290px}
+.hero-cert img{width:46px;height:46px;border-radius:50%;object-fit:contain;background:#fff}
+.hero-cert img+img{margin-left:-14px;box-shadow:0 0 0 3px var(--paper)}
+.hero-cert p{font-size:.88rem;line-height:1.3;font-weight:600}
+.hero-cert small{display:block;font-weight:400;color:var(--muted)}
 
-.quote-card{background:var(--indigo-deep);color:#fff;border-radius:22px 22px 22px 4px;padding:clamp(1.5rem,3vw,2.2rem);position:relative;box-shadow:0 30px 60px -30px rgba(30,12,87,.6)}
-.quote-card h2{font-size:1.75rem;margin-bottom:.35rem}
-.quote-card>p{color:#C9C0F0;font-size:.98rem;margin-bottom:1.3rem}
-.field{display:grid;gap:.35rem;margin-bottom:.85rem}
-.field label{font-size:.85rem;font-weight:500;color:#D8D1F7}
-.field input,.field select,.field textarea{width:100%;font:400 1rem var(--sans);color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:.8rem .9rem}
-.field select option{color:#1A1530}
-.field textarea{min-height:84px;resize:vertical}
-.field input::placeholder,.field textarea::placeholder{color:#9D93C9}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);background:rgba(255,255,255,.11)}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-.quote-card .btn{width:100%;margin-top:.4rem}
-.quote-note{margin-top:.9rem;font-size:.85rem;color:#C9C0F0;text-align:center}
-.form-done{display:none;text-align:center;padding:2rem 0}
-.form-done.show{display:block}
-.form-done svg{width:52px;height:52px;color:var(--orange);margin:0 auto 1rem}
+/* ---------- quote bar ---------- */
+.qbar{position:relative;z-index:2;margin-top:-4.5rem;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:24px 24px 24px 6px;padding:clamp(1.3rem,2.4vw,1.8rem) clamp(1.3rem,2.6vw,2rem);box-shadow:0 34px 60px -34px rgba(20,8,56,.55);display:grid;grid-template-columns:220px 1fr;gap:clamp(1.2rem,2.5vw,2.2rem);align-items:center}
+.qbar h2{font-size:1.6rem;color:var(--indigo-deep);margin-bottom:.3rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .qbar h2{color:#fff}}
+:root[data-theme="dark"] .qbar h2{color:#fff}
+.qbar-intro p{color:var(--muted);font-size:.93rem;line-height:1.4}
+.qform{display:grid;grid-template-columns:1fr 1fr 1.15fr 1.2fr auto;gap:.7rem;align-items:end}
+.field{display:grid;gap:.3rem}
+.field label{font-size:.8rem;font-weight:600;color:var(--muted)}
+.field input,.field select{width:100%;font:400 1rem var(--sans);color:var(--ink);background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:.85rem .9rem;min-height:50px}
+.field input::placeholder{color:#8F89A8}
+.field input:focus,.field select:focus{outline:none;border-color:var(--indigo);background:var(--paper)}
+.qform .btn{min-height:50px;white-space:nowrap}
+.form-done{display:none;align-items:center;gap:.9rem;font-weight:600}
+.form-done.show{display:flex}
+.form-done svg{width:40px;height:40px;color:var(--orange);flex:none}
+.form-done small{display:block;font-weight:400;color:var(--muted)}
 
 /* ---------- services: photo stage + index ---------- */
-.services{padding:clamp(4rem,8vw,7rem) 0 clamp(4rem,7vw,6rem);background:var(--paper)}
+.services{padding:clamp(3.5rem,6vw,5.5rem) 0 clamp(4rem,7vw,6rem);background:var(--paper)}
 .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:2.6rem}
 .sec-head p{color:var(--muted);max-width:48ch;justify-self:end}
 .svc{display:grid;grid-template-columns:1.45fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);align-items:stretch}
@@ -287,6 +294,11 @@ footer .socials{margin-top:1.1rem}
   nav.main.open .dd-menu{position:static;display:block;box-shadow:none;border:0;padding:0 0 0 .8rem;min-width:0}
   nav.main.open .dd>button svg{display:none}
   .hero-grid{grid-template-columns:1fr}
+  .hero-visual{max-width:600px;width:100%;margin:0 auto}
+  .hero-cert{left:1rem}
+  .qbar{grid-template-columns:1fr}
+  .qform{grid-template-columns:1fr 1fr}
+  .qform .btn{grid-column:1/-1}
   .f-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:860px){
@@ -320,7 +332,9 @@ footer .socials{margin-top:1.1rem}
   .facts{grid-template-columns:1fr;gap:.9rem}
   .facts div{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap}
   .facts b{font-size:1.3rem}
-  .row2{grid-template-columns:1fr}
+  .qform{grid-template-columns:1fr}
+  .hero-photo{aspect-ratio:1/1}
+  .hero-cert{left:.75rem;bottom:1rem;max-width:250px}
   .f-grid{grid-template-columns:1fr}
   .logo-tabs button{height:70px}
 }
@@ -372,9 +386,9 @@ footer .socials{margin-top:1.1rem}
 <main>
 <!-- hero -->
 <section class="hero">
-  <svg class="ribbon" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 160C220 60 420 40 640 110s420 120 800-40v150H0Z"/></svg>
+  <svg class="ribbons" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 190C240 70 470 40 720 120s470 120 720-40v40c-250 150-480 160-730 80S240 120 0 230Z"/><path fill="currentColor" d="M0 120C260 20 500 10 760 80s460 90 680-10v24c-230 110-440 110-690 40S250 60 0 150Z"/></svg>
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-copy">
       <div class="kicker"><span></span>Commercial janitorial services in Edmonton</div>
       <h1>Cleaning Edmonton’s workplaces since 2004.</h1>
       <svg class="hero-swoosh" viewBox="0 0 420 40" aria-hidden="true"><path fill="currentColor" d="M2 34C70 30 120 6 190 10c60 4 70 20 130 16 40-3 70-14 98-24-24 18-58 32-100 34-62 3-76-14-130-16C120 18 72 36 2 34Z"/></svg>
@@ -389,32 +403,39 @@ footer .socials{margin-top:1.1rem}
         <div><b>Same cleaner</b><small>Every visit, someone you trust</small></div>
       </div>
     </div>
-
-    <aside class="quote-card" id="quote" aria-labelledby="q-title">
-      <form id="qform" action="https://rivercitycleaners.ca/contact-us/" method="get">
-        <h2 id="q-title">Request a quote</h2>
-        <p>Tell us about your space. We’ll prepare a quote built for your building.</p>
-        <div class="row2">
-          <div class="field"><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required placeholder="Your name"></div>
-          <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required placeholder="780-000-0000"></div>
-        </div>
-        <div class="field"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required placeholder="you@company.ca"></div>
-        <div class="field"><label for="q-service">Service required</label>
-          <select id="q-service" name="service" required>
-            <option>Office Cleaning</option><option>Commercial Cleaning</option><option>Industrial Cleaning</option><option>Institutional Cleaning</option><option>Condo Cleaning</option><option>Long Term Care Facility</option>
-          </select></div>
-        <div class="field"><label for="q-msg">About your building</label><textarea id="q-msg" name="message" placeholder="Type of space, size, how often you need cleaning"></textarea></div>
-        <button class="btn btn-orange" type="submit">Send quote request</button>
-        <p class="quote-note">*No residential services</p>
-      </form>
-      <div class="form-done" id="qdone" role="status">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
-        <h2>Request sent</h2>
-        <p style="color:#C9C0F0;margin-top:.4rem">We’ll get back to you shortly. For anything urgent, call 780-436-5006.</p>
+    <div class="hero-visual">
+      <div class="hero-photo"><img src="images/about-team.jpg" alt="River City Cleaners crew walking through an office lobby with a manager"></div>
+      <div class="hero-cert">
+        <img src="images/environmental-choice.png" alt="Environmental Choice certified"><img src="images/green-seal.jpg" alt="Green Seal certified">
+        <p>Environmental Choice &amp; Green Seal<small>Certified cleaning products</small></p>
       </div>
-    </aside>
+    </div>
   </div>
 </section>
+
+<!-- quote bar -->
+<div class="wrap">
+  <div class="qbar" id="quote">
+    <div class="qbar-intro">
+      <h2 id="q-title">Request a quote</h2>
+      <p>A custom package for your building. *No residential services.</p>
+    </div>
+    <form class="qform" id="qform" action="https://rivercitycleaners.ca/contact-us/" method="get" aria-labelledby="q-title">
+      <div class="field"><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required placeholder="Your name"></div>
+      <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required placeholder="780-000-0000"></div>
+      <div class="field"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required placeholder="you@company.ca"></div>
+      <div class="field"><label for="q-service">Service required</label>
+        <select id="q-service" name="service" required>
+          <option>Office Cleaning</option><option>Commercial Cleaning</option><option>Industrial Cleaning</option><option>Institutional Cleaning</option><option>Condo Cleaning</option><option>Long Term Care Facility</option>
+        </select></div>
+      <button class="btn btn-orange" type="submit">Get my quote</button>
+    </form>
+    <div class="form-done" id="qdone" role="status">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+      <div>Request sent<small>We’ll get back to you shortly. For anything urgent, call 780-436-5006.</small></div>
+    </div>
+  </div>
+</div>
 
 <!-- services -->
 <section class="services" id="services" aria-labelledby="s-title">
@@ -451,7 +472,7 @@ footer .socials{margin-top:1.1rem}
 <section class="about" aria-labelledby="a-title">
   <div class="wrap about-grid">
     <div class="about-photo">
-      <img src="images/about-team.jpg" alt="River City Cleaners crew walking through an office lobby with a manager" loading="lazy">
+      <img src="images/about-company.jpg" alt="River City Cleaners cleaner at work" loading="lazy">
       <div class="since"><b>2004</b>Serving Edmonton<br>and area</div>
     </div>
     <div>
